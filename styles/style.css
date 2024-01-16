@@ -1,5 +1,21 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+:root{
+  --font: 'IBM Plex Mono', sans-serif;
+  --main-text-color: #353430;
+  --main-background-color:#FFF1F7;
+  --accent-background-color: #FF8DCB;
+  --accent-text-color:#353430;
+  --section-title-color:#353430;
+  --header-title-color:#FFC2E6;
+}
 .page {
+  background-color: var(--main-background-color);
+  color:var(--main-text-color);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 23.4px;
+  font-style: normal;
+  margin: 0 auto;
+  max-inline-size: 1024px;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
