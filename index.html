@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Сложно сосредоточиться</title>
-    <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/dark.css">
+    <link rel="stylesheet" href="./styles/light.css"> 
   </head>
   <body class="page">
     <header class="header decorated-zone">
@@ -37,13 +41,13 @@
         </ul>
       </nav>
       <h1 class="header__title">no focus</h1>
-      <p class="subtitle">
-        Что делать, когда не можешь делать ничего Или почему нам так сложно
+      <p class="subtitle header__subtitle">
+        Что делать, когда не можешь делать ничего<br>Или почему нам так сложно
         сконцентрироваться, особенно когда очень надо
       </p>
     </header>
     <main>
-      <section class="why">
+      <section class="container why">
         <h2 class="section__title">Почему сосредоточиться так сложно</h2>
         <ul class="why__list">
           <li>
@@ -88,7 +92,7 @@
           </li>
         </ul>
       </section>
-      <section class="what">
+      <section class="container what">
         <h2 class="section__title">Что снижает концентрацию внимания?</h2>
         <ul class="what__list">
           <li>
@@ -130,7 +134,7 @@
           </li>
         </ul>
       </section>
-      <section class="how">
+      <section class="container how">
         <h2 class="section__title">
           Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх
           секунд)
@@ -212,11 +216,12 @@
             </li>
           </ul>
         </div>
-        <div class="how__pictures">
+        </section>
+        <section class="container how__pictures">
           <h3 class="card__title">
             А можно в картинках?
           </h3>
-          <ul class="how__pictures__list">
+          <!-- <ul class="how__pictures__list">
             <li class="how__pictures__list__item">
               <img src="./images/sunset.png" alt="картинка заката" />
             </li>
@@ -232,9 +237,8 @@
             <li class="how__pictures__list__item">
               <img src="./images/street.png" alt="картинка улицы" />
             </li>
-          </ul>
-        </div>
-      </section>
+          </ul> -->
+        </section>
     </main>
     <footer class="footer">
       <p class="footer_text">focus</p>
