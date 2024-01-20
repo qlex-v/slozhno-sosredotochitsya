@@ -1,7 +1,4 @@
 .page {
-  /* background-image: url(../images/cover-image-light.png);
-  background-position: center;
-  background-attachment: fixed; */
   position: relative;
   color: var(--main-text-color);
   font-family: var(--font);
@@ -10,7 +7,6 @@
   line-height: 23.4px;
   background-color: var(--main-color);
   background-attachment: fixed;
-  /* max-inline-size: 1024px; */
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
@@ -234,23 +230,18 @@ section:last-child {
 
 .sunset {
   grid-area: sunset;
-  /* background-image: url("../images/sunset.png"); */
 }
 .icecream {
   grid-area: icecream;
-  /* background-image: url("../images/ice-cream.png"); */
 }
 .music {
   grid-area: music;
-  /* background-image: url("../images/tape.png"); */
 }
 .books {
   grid-area: books;
-  /* background-image: url("../images/books.png"); */
 }
 .street {
   grid-area: street;
-  /* background-image: url("../images/street.png"); */
 }
 
 .footer {
