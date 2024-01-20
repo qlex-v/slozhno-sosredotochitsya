@@ -1,66 +1,95 @@
 .page {
-  background-image: url(../images/cover-image-light.png);
+  /* background-image: url(../images/cover-image-light.png);
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; */
+  position: relative;
   color: var(--main-text-color);
   font-family: var(--font);
   font-size: 18px;
-  line-height: 23.4px;
   font-style: normal;
+  line-height: 130%;
+  background-color: var(--main-color);
   /* max-inline-size: 1024px; */
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
+
+.page::before {
+  content: "REC";
+  position: absolute;
+  top: 20px;
+  right: 48px;
+  z-index: 0;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #FF0070;
+}
+
+.page::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: -1;
+  line-height: 25px;
+  block-size: 25px;
+  inline-size: 25px;
+  background-image: url(../images/ellipse.svg);
+  background-position: center;
+
+}
+
 .container {
   padding: 0 20px;
 }
 
 .header {
   position: relative;
-  padding: 20px;
-  margin-block-end: 60px;
-  background-image: url(../images/cover-image-light.png);
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  block-size: 100vh;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
+  margin-block-end: 60px;
+  padding: 20px;
+  background-image: url(../images/cover-image-light.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  block-size: 100vh;
 }
 
 header::after {
   content: "";
-  block-size: 25px;
-  inline-size: 25px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   border-top: 1px solid var(--accent-text-color);
   border-right: 1px solid var(--accent-text-color);
-  position: absolute;
-  right: 20px;
-  top: 20px;
+  block-size: 25px;
+  inline-size: 25px;
 }
 
 header::before {
   content: "";
-  block-size: 25px;
-  inline-size: 25px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   border-bottom: 1px solid var(--accent-text-color);
   border-left: 1px solid var(--accent-text-color);
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
+  block-size: 25px;
+  inline-size: 25px;
 }
 
 .header__theme-menu-list {
   display: flex;
-  gap: 13px 10px;
   justify-content: center;
+  gap: 13px 10px;
 }
 
 .header__theme-menu-button {
-  text-transform: lowercase;
-  border-radius: 0;
-  background-color: transparent;
-  padding: 0 13px;
   border: 0;
+  border-radius: 0;
+  padding: 0 13px;
+  color: var(--accent-text-color);
+  text-transform: lowercase;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -77,29 +106,30 @@ header::before {
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--main-text-color);
+  outline: 1px solid var(--accent-text-color);
   cursor: default;
 }
 
 .header__title {
+  align-self: center;
   color: var(--header-title-color);
-  text-shadow: 4px 4px 0px var(--accent-color);
+  font-weight: 700;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-style: normal;
-  font-weight: 700;
   line-height: 82.5%;
-  align-self: center;
+  text-shadow: 4px 4px 0px var(--accent-color);
 }
 
 .subtitle {
+  color: var(--section-title-color);
   font-weight: 700;
   line-height: 130%;
   background-color: var(--accent-color);
 }
 
 .header__subtitle {
-  align-self: center;
   justify-self: end;
+  align-self: center;
   inline-size: 47.4vw;
 }
 
@@ -132,10 +162,10 @@ section:last-child {
 }
 
 .what__list {
-  grid-area: 2/1/3/4;
   display: grid;
-  gap: 20px;
   grid-template-columns: repeat(3, 1fr);
+  grid-area: 2/1/3/4;
+  gap: 20px;
 }
 
 .what__list li {
@@ -144,6 +174,9 @@ section:last-child {
 
 .section__title {
   padding: 0 20px 20px 0;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .what .section__title {
@@ -173,19 +206,19 @@ section:last-child {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 20px 20px;
   grid-template-areas:
     "sunset sunset icecream"
     "music books icecream"
     "music street street";
+  gap: 20px 20px;
+  margin-top: 20px;
   inline-size: 100%;
   block-size: 107vw;
-  margin-top: 20px;
 }
 
 .picture {
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -219,31 +252,131 @@ section:last-child {
 }
 
 .footer_text {
-  font-size: clamp(7.25rem, 5.8902rem + 6.1286vw, 9.8125rem);
   color: var(--header-title-color);
-  text-shadow: 2px 2px 0px var(--accent-color);
   font-weight: 700;
+  font-size: clamp(7.25rem, 5.8902rem + 6.1286vw, 9.8125rem);
   line-height: 82.5%;
+  text-shadow: 2px 2px 0px var(--accent-color);
 }
 
 footer::after {
   content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-inline-end: 1px solid var(--accent-text-color);
+  border-block-start: 1px solid var(--accent-text-color);
   block-size: 25px;
   inline-size: 25px;
-  border-top: 1px solid var(--accent-text-color);
-  border-right: 1px solid var(--accent-text-color);
-  position: absolute;
-  right: 20px;
-  top: 20px;
 }
 
 footer::before {
   content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border-inline-start: 1px solid var(--accent-text-color);
+  border-block-end: 1px solid var(--accent-text-color);
   block-size: 25px;
   inline-size: 25px;
-  border-bottom: 1px solid var(--accent-text-color);
-  border-left: 1px solid var(--accent-text-color);
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
+}
+
+.picture__mobile{
+  display: none;
+}
+
+@media (width < 1024px) {
+  .what__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__theme-menu {
+    align-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+    align-items: end;
+  }
+}
+
+@media (width < 768px) {
+  .what {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .what__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .why {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .how {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .how__pictures{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-block-start: 10px;
+    block-size: auto;
+  }
+
+  .picture__mobile {
+    display: block;
+    inline-size: 100%;
+  }
+
+  .header__subtitle {
+    inline-size: 100%;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .header {
+    margin-block-end: 40px;
+    padding: 10px;
+  }
+
+  header::after {
+    top: 10px;
+    right: 10px;
+  }
+
+  header::before {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .header__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  section {
+    margin-block-end: 50px;
+  }
+
+  section:last-child {
+    margin-block-end: 40px;
+  }
+
+  footer::after {
+    top: 10px;
+    right: 10px;
+  }
+  
+  footer::before {
+    bottom: 10px;
+    left: 10px;
+  }
 }

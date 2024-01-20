@@ -1,3 +1,11 @@
+:root.theme-light {
+  --main-text-color: #353430;
+  --main-color:#FFF1F7;
+  --accent-color: #FF8DCB;
+  --accent-text-color:#353430;
+  --section-title-color:#353430;
+  --header-title-color:#FFC2E6;
+}
 /*
   Специально для светлой темы при наличии класса.
   Здесь окажутся стили, которые нужно переопределить принудительно,
@@ -5,8 +13,41 @@
 */
 
 .page.theme_light {
+  --main-text-color: #353430;
+  --main-color:#FFF1F7;
+  --accent-color: #FF8DCB;
+  --accent-text-color:#353430;
+  --section-title-color:#353430;
+  --header-title-color:#FFC2E6;
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+}
+
+.theme_light .header {
+  background-image: url('../images/cover-image-light.png');
+}
+
+.theme_light.page::before {
+  z-index: 0;
+}
+
+.theme_light.page::after {
+  z-index: -1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-text-color: #353430;
+    --main-color:#FFF1F7;
+    --accent-color: #FF8DCB;
+    --accent-text-color:#353430;
+    --section-title-color:#353430;
+    --header-title-color:#FFC2E6;   
+    }
+
+    .header {
+      background-image: url('../images/cover-image-light.png');
+    }
 }
