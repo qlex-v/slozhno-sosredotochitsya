@@ -112,19 +112,19 @@ header::before {
 
 .header__title {
   align-self: center;
+  margin: -20px;
   color: var(--header-title-color);
   font-weight: 700;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-style: normal;
   line-height: 82.5%;
   text-shadow: 4px 4px 0px var(--accent-color);
-  margin: -20px;
 }
 
 .subtitle {
   color: var(--section-title-color);
-  font-size: 18px;
   font-weight: 700;
+  font-size: 18px;
   line-height: 23.4px;
   background-color: var(--accent-color);
 }
@@ -132,8 +132,8 @@ header::before {
 .header__subtitle {
   justify-self: end;
   align-self: center;
-  inline-size: 48vw;
   margin-block-end: 59px;
+  inline-size: 48vw;
 }
 
 .why {
@@ -293,6 +293,7 @@ footer::before {
 
 @media (width < 1024px) {
   .header__theme-menu {
+    align-self: center;
     margin-block-start: 115px;
   }
 
@@ -304,10 +305,6 @@ footer::before {
   .what__list {
     display: flex;
     flex-direction: column;
-  }
-
-  .header__theme-menu {
-    align-self: center;
   }
 
   .header__theme-menu-list {
@@ -382,8 +379,8 @@ footer::before {
   }
 
   .header__title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     margin: 0;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
   section {
