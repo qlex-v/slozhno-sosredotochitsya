@@ -7,7 +7,7 @@
   font-family: var(--font);
   font-size: 18px;
   font-style: normal;
-  line-height: 130%;
+  line-height: 23.4px;
   background-color: var(--main-color);
   background-attachment: fixed;
   /* max-inline-size: 1024px; */
@@ -118,19 +118,22 @@ header::before {
   font-style: normal;
   line-height: 82.5%;
   text-shadow: 4px 4px 0px var(--accent-color);
+  margin: -20px;
 }
 
 .subtitle {
   color: var(--section-title-color);
+  font-size: 18px;
   font-weight: 700;
-  line-height: 130%;
+  line-height: 23.4px;
   background-color: var(--accent-color);
 }
 
 .header__subtitle {
   justify-self: end;
   align-self: center;
-  inline-size: 47.4vw;
+  inline-size: 48vw;
+  margin-block-start: -59px;
 }
 
 .why {
@@ -145,7 +148,7 @@ header::before {
 }
 
 .subtitle + .text {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 section {
   margin-block-end: 80px;
@@ -174,7 +177,7 @@ section:last-child {
 
 .section__title {
   padding: 0 20px 20px 0;
-  color: var(--accent-color);
+  color: var(--accent-text-color);
   font-weight: 700;
   font-size: 18px;
 }
@@ -213,34 +216,39 @@ section:last-child {
   gap: 20px 20px;
   margin-top: 20px;
   inline-size: 100%;
-  block-size: 107vw;
+  block-size: 49vw;
 }
 
-.picture {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.picture__mobile {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.section__pictures{
+  block-size: 107vw;
 }
 
 .sunset {
   grid-area: sunset;
-  background-image: url("../images/sunset.png");
+  /* background-image: url("../images/sunset.png"); */
 }
 .icecream {
   grid-area: icecream;
-  background-image: url("../images/ice-cream.png");
+  /* background-image: url("../images/ice-cream.png"); */
 }
 .music {
   grid-area: music;
-  background-image: url("../images/tape.png");
+  /* background-image: url("../images/tape.png"); */
 }
 .books {
   grid-area: books;
-  background-image: url("../images/books.png");
+  /* background-image: url("../images/books.png"); */
 }
 .street {
   grid-area: street;
-  background-image: url("../images/street.png");
+  /* background-image: url("../images/street.png"); */
 }
 
 .footer {
@@ -281,9 +289,6 @@ footer::before {
   inline-size: 25px;
 }
 
-.picture__mobile {
-  display: none;
-}
 
 @media (width < 1024px) {
   .what__list {
