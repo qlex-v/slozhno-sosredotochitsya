@@ -133,12 +133,13 @@ header::before {
   justify-self: end;
   align-self: center;
   inline-size: 48vw;
-  margin-block-start: -59px;
+  margin-block-end: 59px;
 }
 
 .why {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  gap: 20px;
 }
 
 .why__list {
@@ -176,7 +177,7 @@ section:last-child {
 }
 
 .section__title {
-  padding: 0 20px 20px 0;
+  padding: 0 10px 20px 0;
   color: var(--accent-text-color);
   font-weight: 700;
   font-size: 18px;
@@ -189,6 +190,7 @@ section:last-child {
 .how {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  gap: 20px;
 }
 
 .advice__card__title {
@@ -226,7 +228,7 @@ section:last-child {
   block-size: 100%;
 }
 
-.section__pictures{
+.section__pictures {
   block-size: 107vw;
 }
 
@@ -262,7 +264,7 @@ section:last-child {
 .footer_text {
   color: var(--header-title-color);
   font-weight: 700;
-  font-size: clamp(7.25rem, 5.8902rem + 6.1286vw, 9.8125rem);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 82.5%;
   text-shadow: 2px 2px 0px var(--accent-color);
 }
@@ -289,8 +291,16 @@ footer::before {
   inline-size: 25px;
 }
 
-
 @media (width < 1024px) {
+  .header__theme-menu {
+    margin-block-start: 115px;
+  }
+
+  .header__subtitle {
+    margin-block-end: 115px;
+    inline-size: 47vw;
+  }
+
   .what__list {
     display: flex;
     flex-direction: column;
@@ -310,6 +320,7 @@ footer::before {
   .what {
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
   .what__list {
@@ -320,11 +331,13 @@ footer::before {
   .why {
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
   .how {
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
   .how__pictures {
@@ -340,7 +353,12 @@ footer::before {
     inline-size: 100%;
   }
 
+  .header__theme-menu {
+    margin: 0;
+  }
+
   .header__subtitle {
+    margin: 0;
     inline-size: 100%;
   }
 
@@ -350,7 +368,7 @@ footer::before {
 
   .header {
     margin-block-end: 40px;
-    padding: 10px;
+    padding: 20px 10px;
   }
 
   header::after {
@@ -365,6 +383,7 @@ footer::before {
 
   .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin: 0;
   }
 
   section {
@@ -383,5 +402,9 @@ footer::before {
   footer::before {
     bottom: 10px;
     left: 10px;
+  }
+
+  .section__pictures {
+    block-size: 100%;
   }
 }
