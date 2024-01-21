@@ -5,13 +5,13 @@
   font-size: 18px;
   font-style: normal;
   line-height: 23.4px;
-  background-color: var(--main-color);
+  background: center / cover var(--bg-image) no-repeat;
   background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
-.page::before {
-  content: "REC";
+.rec {
+  display: none;
   position: absolute;
   top: 20px;
   right: 48px;
@@ -21,17 +21,17 @@
   text-transform: uppercase;
 }
 
-.page::after {
+.rec::before {
   content: "";
+  font-size: 15px;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: -1;
-  line-height: 25px;
-  background-image: url(../images/ellipse.svg);
-  background-position: center;
-  block-size: 25px;
-  inline-size: 25px;
+  left: 42px;
+  top: 8px;
+  background-color: #ff0070;
+  box-shadow: 0 0 6px 5px #ff0070;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
 }
 
 .container {
@@ -44,14 +44,13 @@
   grid-template-rows: repeat(3, 1fr);
   margin-block-end: 60px;
   padding: 20px;
-  background-image: url(../images/cover-image-light.png);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  block-size: 100vh;
+  block-size: max(100vh, 648px);
 }
 
-header::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
   top: 20px;
@@ -62,7 +61,7 @@ header::after {
   inline-size: 25px;
 }
 
-header::before {
+.decorated-zone::before {
   content: "";
   position: absolute;
   bottom: 20px;
@@ -90,7 +89,7 @@ header::before {
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgba(50, 49, 45, 0.4);
+  outline: 1px solid var(--hover-color);
 }
 
 .header__theme-menu-button:focus {
@@ -98,7 +97,7 @@ header::before {
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--main-text-color);
+  border-block-end: 1px solid var(--accent-text-color);
 }
 
 .header__theme-menu-button_active {
@@ -106,9 +105,16 @@ header::before {
   cursor: default;
 }
 
+.header__theme-menu-button_active:hover {
+  outline: 1px solid var(--accent-text-color);
+}
+
 .header__title {
   align-self: center;
   margin: -20px;
+}
+
+.title-text {
   color: var(--header-title-color);
   font-weight: 700;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -132,16 +138,32 @@ header::before {
   inline-size: 48vw;
 }
 
-.why {
+.section {
   display: grid;
+}
+
+.why {
   grid-template-columns: 1fr 2fr;
-  gap: 20px;
+  gap: 10px;
 }
 
 .why__list {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--main-text-color);
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--main-text-color);
 }
 
 .subtitle + .text {
@@ -156,7 +178,6 @@ section:last-child {
 }
 
 .what {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto 1fr;
 }
@@ -172,21 +193,20 @@ section:last-child {
   flex-grow: 1;
 }
 
-.section__title {
+.section-title {
   padding: 0 10px 20px 0;
   color: var(--accent-text-color);
   font-weight: 700;
   font-size: 18px;
 }
 
-.what .section__title {
+.what .section-title {
   grid-area: 1/1/2/2;
 }
 
 .how {
-  display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 20px;
+  gap: 10px;
 }
 
 .advice__card__title {
@@ -199,47 +219,52 @@ section:last-child {
   gap: 20px;
 }
 
-.subtitle__advice {
+.advice__subtitle {
   margin-bottom: 20px;
 }
 
-.how__pictures {
+.advice__card__title {
+  font-weight: 400;
+}
+
+.list-pictures {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3,  1fr);
   grid-template-areas:
     "sunset sunset icecream"
     "music books icecream"
     "music street street";
-  gap: 20px 20px;
+  gap: 12px 20px;
   margin-top: 20px;
   inline-size: 100%;
-  block-size: 49vw;
 }
 
-.picture__mobile {
+.picture {
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
   block-size: 100%;
 }
 
-.section__pictures {
-  block-size: 107vw;
-}
-
 .sunset {
   grid-area: sunset;
 }
+
 .icecream {
   grid-area: icecream;
 }
+
 .music {
   grid-area: music;
 }
+
 .books {
   grid-area: books;
 }
+
 .street {
   grid-area: street;
 }
@@ -249,37 +274,7 @@ section:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
-  block-size: 100vh;
-}
-
-.footer_text {
-  color: var(--header-title-color);
-  font-weight: 700;
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  line-height: 82.5%;
-  text-shadow: 2px 2px 0px var(--accent-color);
-}
-
-footer::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  border-inline-end: 1px solid var(--accent-text-color);
-  border-block-start: 1px solid var(--accent-text-color);
-  block-size: 25px;
-  inline-size: 25px;
-}
-
-footer::before {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  border-inline-start: 1px solid var(--accent-text-color);
-  border-block-end: 1px solid var(--accent-text-color);
-  block-size: 25px;
-  inline-size: 25px;
+  block-size: max(100vh, 668px);
 }
 
 @media (width < 1024px) {
@@ -305,30 +300,18 @@ footer::before {
 }
 
 @media (width < 768px) {
-  .what {
+  .rec {
+    top: 10px;
+    right: 38px;
+  }
+
+  .section {
     display: flex;
     flex-direction: column;
     gap: 0;
   }
 
-  .what__list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .why {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .how {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .how__pictures {
+  .list-pictures {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -336,9 +319,8 @@ footer::before {
     block-size: auto;
   }
 
-  .picture__mobile {
+  .picture {
     display: block;
-    inline-size: 100%;
   }
 
   .header__theme-menu {
@@ -359,18 +341,21 @@ footer::before {
     padding: 20px 10px;
   }
 
-  header::after {
+  .decorated-zone::after {
     top: 10px;
     right: 10px;
   }
 
-  header::before {
+  .decorated-zone::before {
     bottom: 10px;
     left: 10px;
   }
 
   .header__title {
     margin: 0;
+  }
+
+  .title-text {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
@@ -380,16 +365,6 @@ footer::before {
 
   section:last-child {
     margin-block-end: 40px;
-  }
-
-  footer::after {
-    top: 10px;
-    right: 10px;
-  }
-
-  footer::before {
-    bottom: 10px;
-    left: 10px;
   }
 
   .section__pictures {
