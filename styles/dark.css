@@ -3,17 +3,6 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-/* :root.theme-dark {
-  --main-text-color: #f1b2ce;
-  --main-color: #000028;
-  --accent-color: #ff0070;
-  --accent-text-color: #ff0070;
-  --section-title-color: #000028;
-  --header-title-color: #db00ff;
-  --bg-image: url('../images/cover-image-dark.png');
-
-} */
-
 .page.theme_dark {
   --main-text-color: #f1b2ce;
   --main-color: #000028;
@@ -21,7 +10,7 @@
   --accent-text-color: #ff0070;
   --section-title-color: #000028;
   --header-title-color: #db00ff;
-  --bg-image: url('../images/cover-image-dark.png');
+  --bg-image: url("../images/cover-image-dark.png");
   --hover-color: rgba(255, 0, 112, 0.4);
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
@@ -29,25 +18,9 @@
   */
 }
 
-.theme_dark .rec{
+.theme_dark .rec {
   display: block;
 }
-
-/* .page.theme_dark::after {
-  z-index: 0;
-}
-
-.page.theme_dark::before {
-  z-index: 1;
-} */
-
-/* .theme_dark .header {
-  background-image: url("../images/cover-image-dark.png");
-} */
-
-/* .theme_dark .header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 0.4);
-} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -57,10 +30,10 @@
     --accent-text-color: #ff0070;
     --section-title-color: #000028;
     --header-title-color: #db00ff;
-    --bg-image: url('../images/cover-image-dark.png');
+    --bg-image: url("../images/cover-image-dark.png");
     --hover-color: rgba(255, 0, 112, 0.4);
   }
-  
+
   .rec {
     display: block;
   }

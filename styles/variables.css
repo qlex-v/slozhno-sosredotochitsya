@@ -10,6 +10,6 @@
   --accent-text-color: #353430;
   --section-title-color: #353430;
   --header-title-color: #ffc2e6;
-  --bg-image: url('../images/cover-image-light.png');
+  --bg-image: url("../images/cover-image-light.png");
   --hover-color: rgba(50, 49, 45, 0.4);
 }
