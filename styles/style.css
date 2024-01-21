@@ -211,6 +211,7 @@ section:last-child {
 
 .advice__card__title {
   margin-bottom: 10px;
+  font-weight: 400;
 }
 
 .advice__list {
@@ -221,10 +222,6 @@ section:last-child {
 
 .advice__subtitle {
   margin-bottom: 20px;
-}
-
-.advice__card__title {
-  font-weight: 400;
 }
 
 .list-pictures {
@@ -296,6 +293,14 @@ section:last-child {
   .header__theme-menu-list {
     flex-direction: column;
     align-items: end;
+  }
+
+  .why {
+    gap: 20px;
+  }
+
+  .how {
+    gap: 20px;
   }
 }
 
