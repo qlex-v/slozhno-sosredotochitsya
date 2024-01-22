@@ -47,7 +47,7 @@
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  block-size: max(100vh, 648px);
+  min-block-size: 100vh;
 }
 
 .decorated-zone::after {
@@ -147,7 +147,7 @@
   gap: 10px;
 }
 
-.why__list {
+.section-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -209,15 +209,9 @@ section:last-child {
   gap: 10px;
 }
 
-.advice__card__title {
+.card__title {
   margin-bottom: 10px;
   font-weight: 400;
-}
-
-.advice__list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .advice__subtitle {
@@ -271,7 +265,11 @@ section:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
-  block-size: max(100vh, 668px);
+  min-block-size: 100vh;
+}
+
+.footer__text {
+  text-shadow: 2px 2px 0px var(--accent-color);
 }
 
 @media (width < 1024px) {

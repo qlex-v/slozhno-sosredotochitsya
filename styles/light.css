@@ -19,12 +19,8 @@
   */
 }
 
-.theme_light.page::before {
-  z-index: 0;
-}
-
-.theme_light.page::after {
-  z-index: -1;
+.theme_light .rec {
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
